@@ -12,7 +12,7 @@ class Ostoskori:
         # samoin jos korissa on 1 kpl tuotetta "maito" ja 1 kpl tuotetta "juusto", tulee metodin palauttaa 2 
         lkm = 0
         for tavara in self.sisalto:
-            lkm += tavara.lukumaara
+            lkm += tavara.lukumaara()
 
         return lkm
 
@@ -22,7 +22,8 @@ class Ostoskori:
 
     def lisaa_tuote(self, lisattava: Tuote):
         # lisää tuotteen
-        pass
+        self.sisalto.append(Ostos(lisattava))
+        
 
     def poista_tuote(self, poistettava: Tuote):
         # poistaa tuotteen
